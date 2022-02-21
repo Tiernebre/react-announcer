@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Tiernebre/react-announcer/issues"
   },
-  "homepage": "https://github.com/Tiernebre/react-announcer#readme"
+  "homepage": "https://github.com/Tiernebre/react-announcer#readme",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
 }
