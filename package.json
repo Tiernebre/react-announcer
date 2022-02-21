@@ -6,7 +6,8 @@
   "types": "dist/react-announcer.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "test": "prettier --check .",
     "prepare": "husky install"
   },
   "repository": {

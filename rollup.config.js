@@ -1,8 +1,8 @@
-import esbuild from 'rollup-plugin-esbuild'
-import dts from "rollup-plugin-dts"
-import cleaner from 'rollup-plugin-cleaner'
+import esbuild from "rollup-plugin-esbuild";
+import dts from "rollup-plugin-dts";
+import cleaner from "rollup-plugin-cleaner";
 
-const input = 'src/index.ts'
+const input = "src/index.ts";
 
 export default [
   {
@@ -10,24 +10,22 @@ export default [
     output: [{ file: "dist/react-announcer.d.ts", format: "es" }],
     plugins: [
       cleaner({
-        targets: [
-          './dist/'
-        ]
+        targets: ["./dist/"],
       }),
-      dts()
+      dts(),
     ],
   },
   {
     input,
     output: {
-      dir: 'dist',
-      format: 'es'
+      dir: "dist",
+      format: "es",
     },
     plugins: [
       esbuild({
         minify: true,
-        target: 'esnext'
-      })
+        target: "esnext",
+      }),
     ],
   },
-]
+];
