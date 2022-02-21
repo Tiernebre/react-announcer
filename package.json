@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/Tiernebre/react-announcer#readme",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.0",
     "esbuild": "^0.14.23",
     "rollup": "^2.67.3",
     "rollup-plugin-cleaner": "^1.0.0",
