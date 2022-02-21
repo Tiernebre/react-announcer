@@ -1,10 +1,15 @@
-import typescript from '@rollup/plugin-typescript';
+import esbuild from 'rollup-plugin-esbuild'
 
 export default {
   input: 'src/index.ts',
   output: {
     dir: 'dist',
-    format: 'cjs'
+    format: 'es'
   },
-  plugins: [typescript()]
-};
+  plugins: [
+    esbuild({
+      minify: true,
+      target: 'esnext'
+    }),
+  ],
+}
