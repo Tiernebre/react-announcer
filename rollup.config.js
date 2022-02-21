@@ -1,4 +1,5 @@
 import esbuild from 'rollup-plugin-esbuild'
+import dts from "rollup-plugin-dts"
 
 export default {
   input: 'src/index.ts',
@@ -11,5 +12,6 @@ export default {
       minify: true,
       target: 'esnext'
     }),
+    dts()
   ],
 }
