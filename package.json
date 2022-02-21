@@ -31,6 +31,9 @@
     "url": "https://github.com/Tiernebre/react-announcer/issues"
   },
   "homepage": "https://github.com/Tiernebre/react-announcer#readme",
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
