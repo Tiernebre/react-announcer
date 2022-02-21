@@ -6,7 +6,8 @@
   "types": "dist/react-announcer.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
   "homepage": "https://github.com/Tiernebre/react-announcer#readme",
   "devDependencies": {
     "esbuild": "^0.14.23",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
     "rollup": "^2.67.3",
     "rollup-plugin-cleaner": "^1.0.0",
