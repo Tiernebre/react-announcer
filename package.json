@@ -4,6 +4,7 @@
   "description": "a11y announcer for React to announce information to screen readers.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Tiernebre/react-announcer/issues"
   },
-  "homepage": "https://github.com/Tiernebre/react-announcer#readme"
+  "homepage": "https://github.com/Tiernebre/react-announcer#readme",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
 }
