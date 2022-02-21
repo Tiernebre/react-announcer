@@ -2,7 +2,8 @@
   "name": "react-announcer",
   "version": "0.1.0",
   "description": "a11y announcer for React to announce information to screen readers.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/react-announcer.d.ts",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,6 +31,8 @@
     "@rollup/plugin-typescript": "^8.3.0",
     "esbuild": "^0.14.23",
     "rollup": "^2.67.3",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-dts": "^4.1.0",
     "rollup-plugin-esbuild": "^4.8.2",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5"
