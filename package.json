@@ -4,7 +4,7 @@
   "description": "a11y announcer for React to announce information to screen readers.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
