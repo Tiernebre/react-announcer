@@ -1,14 +1,16 @@
 import esbuild from 'rollup-plugin-esbuild'
 import dts from "rollup-plugin-dts"
 
+const input = 'src/index.ts'
+
 export default [
   {
-    input: "src/index.ts",
+    input,
     output: [{ file: "dist/react-announcer.d.ts", format: "es" }],
     plugins: [dts()],
   },
   {
-    input: 'src/index.ts',
+    input,
     output: {
       dir: 'dist',
       format: 'es'
