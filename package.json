@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx",
     "test": "pnpm lint && pnpm check-format",
     "prepare": "husky install"
   },
@@ -43,6 +43,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
+    "react": "^17.0.2",
     "rollup": "^2.67.3",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-dts": "^4.1.0",
