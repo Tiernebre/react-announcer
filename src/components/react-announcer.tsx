@@ -1,7 +1,10 @@
 import { CSSProperties } from "react";
 
+type Politeness = "polite" | "off" | "assertive";
+
 type ReactAnnouncerProperties = {
   text?: string;
+  politeness?: Politeness;
 };
 
 const style: CSSProperties = {
@@ -18,6 +21,11 @@ const style: CSSProperties = {
 
 export const ReactAnnouncer = ({
   text,
+  politeness,
 }: ReactAnnouncerProperties): JSX.Element => {
-  return <div style={style}>{text}</div>;
+  return (
+    <div aria-live={politeness} style={style}>
+      {text}
+    </div>
+  );
 };
