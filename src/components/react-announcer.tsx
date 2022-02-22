@@ -1,6 +1,5 @@
 import { CSSProperties } from "react";
-
-type Politeness = "polite" | "off" | "assertive";
+import { Politeness } from "../types";
 
 type ReactAnnouncerProperties = {
   text?: string;
