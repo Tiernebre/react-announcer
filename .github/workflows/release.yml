@@ -1,37 +1,40 @@
 name: Release
+
 on:
   push:
     branches:
       - master
+
 jobs:
   release:
     name: Release
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
         with:
-          fetch-depth: 0
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2.0.1
         with:
-          node-version: 14
+          version: 6.31.0
+          run_install: true
 
-      - name: Install dependencies
-        run: yarn
+      - name: Build files
+        run: pnpm build
 
-      - name: Build library
-        run: yarn build
-
-      - name: Run style / linting tests
-        run: yarn lint
-
-      - name: Run unit tests
-        run: yarn test
+      - name: Run tests
+        run: pnpm test
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: pnpx semantic-release
