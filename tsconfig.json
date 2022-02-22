@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "target": "es2016",
     "module": "esnext",
     "rootDir": "src",
@@ -7,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "moduleResolution": "node"
   }
 }
