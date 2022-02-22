@@ -1,26 +1,46 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { ReactAnnouncer } from ".";
 import { Politeness } from "../types";
+import { announce } from "../api";
+
+const testId = "react-announcer";
+const testMessage = "Hello there. This is a test.";
+
+const queryAnnouncer = (): HTMLElement | null => screen.queryByTestId(testId);
+const getAnnouncer = (): HTMLElement => screen.getByTestId(testId);
+
+const announceATestMessage = (message = testMessage) => {
+  act(() => {
+    announce(message);
+  });
+};
 
 describe("React Announcer", () => {
-  it("displays the text content", () => {
-    const text = "Hello there. This is a test.";
-    render(<ReactAnnouncer text={text} />);
-    expect(screen.getByText(text)).toBeInTheDocument();
+  it("is not rendered without a message", () => {
+    render(<ReactAnnouncer />);
+    expect(queryAnnouncer()).toBeNull();
+  });
+
+  it("is rendered when a message is announced", () => {
+    render(<ReactAnnouncer />);
+    announceATestMessage();
+    const announcer = getAnnouncer();
+    expect(announcer).toBeInTheDocument();
+    expect(announcer).toHaveTextContent(testMessage);
   });
 
   it("by default has a polite aria-live if not specified", () => {
-    const text = "Hello there. This is a test.";
-    render(<ReactAnnouncer text={text} />);
-    expect(screen.getByText(text)).toHaveAttribute("aria-live", "polite");
+    render(<ReactAnnouncer />);
+    announceATestMessage();
+    expect(getAnnouncer()).toHaveAttribute("aria-live", "polite");
   });
 
   it.each<Politeness>(["polite", "off", "assertive"])(
     "can be set with politeness = %p",
     (politeness: Politeness) => {
-      const text = "Hello there. This is a test.";
-      render(<ReactAnnouncer text={text} politeness={politeness} />);
-      expect(screen.getByText(text)).toHaveAttribute("aria-live", politeness);
+      render(<ReactAnnouncer politeness={politeness} />);
+      announceATestMessage();
+      expect(getAnnouncer()).toHaveAttribute("aria-live", politeness);
     }
   );
 });

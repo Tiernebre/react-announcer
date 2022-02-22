@@ -1,9 +1,11 @@
+/* eslint-disable unicorn/no-null */
 import { CSSProperties } from "react";
 import { Politeness } from "../types";
+import { useAnnouncerStore } from "../hooks";
 
 type ReactAnnouncerProperties = {
-  text?: string;
   politeness?: Politeness;
+  testId?: string;
 };
 
 const style: CSSProperties = {
@@ -19,12 +21,14 @@ const style: CSSProperties = {
 };
 
 export const ReactAnnouncer = ({
-  text,
   politeness = "polite",
-}: ReactAnnouncerProperties): JSX.Element => {
-  return (
-    <div aria-live={politeness} style={style}>
-      {text}
+  testId = "react-announcer",
+}: ReactAnnouncerProperties): JSX.Element | null => {
+  const { message } = useAnnouncerStore();
+
+  return message ? (
+    <div aria-live={politeness} style={style} data-testid={testId}>
+      {message}
     </div>
-  );
+  ) : null;
 };
