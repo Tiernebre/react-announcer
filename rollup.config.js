@@ -18,10 +18,21 @@ export default [
   },
   {
     input,
-    output: {
-      dir: "dist",
-      format: "es",
-    },
+    output: [
+      {
+        name: "react-announcer",
+        file: "dist/index.umd.js",
+        format: "umd",
+        globals: {
+          react: "react",
+        },
+      },
+      {
+        name: "react-announcer",
+        file: "dist/index.es.js",
+        format: "es",
+      },
+    ],
     external: ["react"],
     plugins: [
       esbuild({

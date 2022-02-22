@@ -2,7 +2,14 @@
   "name": "react-announcer",
   "version": "0.1.0",
   "description": "a11y announcer for React to announce information to screen readers.",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "types": "dist/react-announcer.d.ts",
   "files": [
     "dist"
