@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "pnpm lint && pnpm check-format",
+    "test": "pnpm lint && pnpm check-format && pnpm test:unit",
     "test:unit": "jest",
     "prepare": "husky install"
   },
