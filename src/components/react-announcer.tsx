@@ -20,7 +20,7 @@ const style: CSSProperties = {
 
 export const ReactAnnouncer = ({
   text,
-  politeness,
+  politeness = "polite",
 }: ReactAnnouncerProperties): JSX.Element => {
   return (
     <div aria-live={politeness} style={style}>
