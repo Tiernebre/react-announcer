@@ -4,6 +4,9 @@
   "description": "a11y announcer for React to announce information to screen readers.",
   "main": "dist/index.js",
   "types": "dist/react-announcer.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "format": "prettier --write .",
