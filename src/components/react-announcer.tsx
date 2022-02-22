@@ -1,8 +1,8 @@
 import { CSSProperties } from "react";
 import { Politeness } from "../types";
+import { useAnnouncerStore } from "../hooks";
 
 type ReactAnnouncerProperties = {
-  text?: string;
   politeness?: Politeness;
 };
 
@@ -19,12 +19,13 @@ const style: CSSProperties = {
 };
 
 export const ReactAnnouncer = ({
-  text,
   politeness = "polite",
 }: ReactAnnouncerProperties): JSX.Element => {
+  const { message } = useAnnouncerStore();
+
   return (
     <div aria-live={politeness} style={style}>
-      {text}
+      {message}
     </div>
   );
 };

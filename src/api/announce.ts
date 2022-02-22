@@ -1,4 +1,4 @@
-import { dispatch } from "../hooks/use-announcer-store";
+import { dispatch } from "../hooks";
 
 export const announce = (message: string) => {
   dispatch({
