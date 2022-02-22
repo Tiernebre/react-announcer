@@ -36,8 +36,8 @@
   "homepage": "https://github.com/Tiernebre/react-announcer#readme",
   "devDependencies": {
     "@types/react": "^17.0.39",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "esbuild": "^0.14.23",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
