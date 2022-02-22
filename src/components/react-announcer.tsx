@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/no-null */
 import { CSSProperties } from "react";
 import { Politeness } from "../types";
 import { useAnnouncerStore } from "../hooks";
@@ -22,12 +23,12 @@ const style: CSSProperties = {
 export const ReactAnnouncer = ({
   politeness = "polite",
   testId = "react-announcer",
-}: ReactAnnouncerProperties): JSX.Element => {
+}: ReactAnnouncerProperties): JSX.Element | null => {
   const { message } = useAnnouncerStore();
 
-  return (
+  return message ? (
     <div aria-live={politeness} style={style} data-testid={testId}>
       {message}
     </div>
-  );
+  ) : null;
 };
