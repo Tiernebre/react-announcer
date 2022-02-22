@@ -8,6 +8,7 @@ export default [
   {
     input,
     output: [{ file: "dist/react-announcer.d.ts", format: "es" }],
+    external: ["react"],
     plugins: [
       cleaner({
         targets: ["./dist/"],
@@ -21,6 +22,7 @@ export default [
       dir: "dist",
       format: "es",
     },
+    external: ["react"],
     plugins: [
       esbuild({
         minify: true,
