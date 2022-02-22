@@ -9,7 +9,7 @@ type State = {
   message: string;
 };
 
-export const reducer = (state: State, action: Action): State => {
+const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ANNOUNCE_MESSAGE":
       return {
