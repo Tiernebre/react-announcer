@@ -1,9 +1,0 @@
-.github
-.husky
-.vscode
-src
-.eslintignore
-.eslintrc.js
-jest-setup.ts
-./*.js
-
