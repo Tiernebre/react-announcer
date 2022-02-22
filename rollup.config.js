@@ -18,10 +18,16 @@ export default [
   },
   {
     input,
-    output: {
-      dir: "dist",
-      format: "es",
-    },
+    output: [
+      {
+        file: "dist/index.umd.js",
+        format: "umd",
+      },
+      {
+        file: "dist/index.es.js",
+        format: "es",
+      },
+    ],
     external: ["react"],
     plugins: [
       esbuild({
