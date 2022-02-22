@@ -17,6 +17,11 @@
     "type": "git",
     "url": "git+https://github.com/Tiernebre/react-announcer.git"
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "keywords": [
     "react",
     "a11y",
