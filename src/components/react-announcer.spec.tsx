@@ -29,6 +29,15 @@ describe("React Announcer", () => {
     expect(announcer).toHaveTextContent(testMessage);
   });
 
+  it("can handle message updates", () => {
+    render(<ReactAnnouncer />);
+    announceATestMessage();
+    expect(getAnnouncer()).toHaveTextContent(testMessage);
+    const updatedMessage = "This is an update. Hi!";
+    announceATestMessage(updatedMessage);
+    expect(getAnnouncer()).toHaveTextContent(updatedMessage);
+  });
+
   it("by default has a polite aria-live if not specified", () => {
     render(<ReactAnnouncer />);
     announceATestMessage();
