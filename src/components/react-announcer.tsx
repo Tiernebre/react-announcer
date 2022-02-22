@@ -4,6 +4,7 @@ import { useAnnouncerStore } from "../hooks";
 
 type ReactAnnouncerProperties = {
   politeness?: Politeness;
+  testId?: string;
 };
 
 const style: CSSProperties = {
@@ -20,11 +21,12 @@ const style: CSSProperties = {
 
 export const ReactAnnouncer = ({
   politeness = "polite",
+  testId = "react-announcer",
 }: ReactAnnouncerProperties): JSX.Element => {
   const { message } = useAnnouncerStore();
 
   return (
-    <div aria-live={politeness} style={style}>
+    <div aria-live={politeness} style={style} data-testid={testId}>
       {message}
     </div>
   );
